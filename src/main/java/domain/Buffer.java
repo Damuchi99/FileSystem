@@ -14,6 +14,12 @@ public class Buffer {
     public void limit(int bytesLeidos){
         this.bufferEnd = this.bufferStart + bytesLeidos;
     }
+    
+    public void setTamanio(int tamanio) {
+    	this.bufferBytes = new byte[tamanio];
+        this.bufferStart = 0;
+        this.bufferEnd = tamanio - 1;
+    }
 
 	public byte[] getBufferBytes() {
 		return bufferBytes;

@@ -30,17 +30,18 @@ public class HighLevelFileSystem {
 		buffer.limit(bytesLeidos);
 	}
 	
-	void syncWriteFile(OpenFile file, Buffer buffer) {
-		this.lowLevelFileSystem.syncWriteFile(file.getFileDescriptor(), 
+	public void syncWriteFile(OpenFile file, Buffer buffer) {
+		this.lowLevelFileSystem.syncWriteFile(
+				file.getFileDescriptor(), 
 				buffer.getBufferBytes(), 
 				buffer.getBufferStart(), 
 				buffer.getBufferEnd()
 				);
 	}
 	
-	void asyncReadFile(OpenFile file, Consumer<Buffer> callback) {
-		Buffer buffer = new Buffer(100);
-		this.lowLevelFileSystem.asyncReadFile(file.getFileDescriptor(), 
+	public void asyncReadFile(OpenFile file, Consumer<Buffer> callback, Buffer buffer) {
+		this.lowLevelFileSystem.asyncReadFile(
+				file.getFileDescriptor(), 
 				buffer.getBufferBytes(), 
 				buffer.getBufferStart(), 
 				buffer.getBufferEnd(), 
