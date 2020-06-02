@@ -27,7 +27,7 @@ public class HighLevelFileSystem {
 				buffer.getBufferEnd()
 				);
 		
-		buffer.limit(bytesLeidos);
+		buffer.limite(bytesLeidos);
 	}
 	
 	public void syncWriteFile(OpenFile file, Buffer buffer) {
@@ -46,7 +46,7 @@ public class HighLevelFileSystem {
 				buffer.getBufferStart(), 
 				buffer.getBufferEnd(), 
 				bytesLeidos -> {
-					buffer.limit(bytesLeidos);
+					buffer.limite(bytesLeidos);
 					callback.accept(buffer);
 				});
 	}

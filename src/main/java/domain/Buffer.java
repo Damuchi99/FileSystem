@@ -11,7 +11,7 @@ public class Buffer {
         this.bufferEnd = tamanio - 1;
     }
 
-    public void limit(int bytesLeidos){
+    public void limite(int bytesLeidos){
         this.bufferEnd = this.bufferStart + bytesLeidos;
     }
     
