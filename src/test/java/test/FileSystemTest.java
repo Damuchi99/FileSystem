@@ -61,7 +61,7 @@ public class FileSystemTest {
     }
 	
 	@Test
-	public void escribirArchivoAsincronicamente() {
+	public void escribirArchivoSincronicamente() {
 		buffer = new Buffer(4);
 		Mockito.when(lowLevelFileSystem.openFile("archivo.txt")).thenReturn(2);
 		file = highLevelFileSystem.openFile("archivo.txt");
